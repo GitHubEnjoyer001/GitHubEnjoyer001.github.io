@@ -67,11 +67,13 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 //ce que je vais ajouter
 
+/*ferme le dialogue jusqu'a la recharge de la page*/
 function fermerDialogue()
 {
   document.getElementById("boiteDialogue").close();
 }
 
+/*ferme le dialog pour toujours*/
 function fermerPourDeVrai()
 {
   localStorage.setItem("nePlusAfficher", "true");
@@ -83,6 +85,7 @@ if(localStorage.getItem("nePlusAfficher") !== "true")
   document.getElementById("boiteDialogue").showModal();
 }
 
+/*ma fonction vérifie que toutes les cartes ont été retournées et va faire jouer la video de victoire*/
 function verifierVictoire() 
 {
   //Vérifie si toutes les cartes sont retournées (ont la classe 'flip')
@@ -104,6 +107,7 @@ function verifierVictoire()
   }
 }
 
+/*ma fonction fait apparaitre mon bouton*/
 function apparaitreBouton()
 {
   document.getElementById("recommencer");
