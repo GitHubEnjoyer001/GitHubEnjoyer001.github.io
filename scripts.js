@@ -22,6 +22,9 @@ function flipCard() {
   secondCard = this;
 
   checkForMatch();
+
+  //appel ma fonction verifier victoire
+  verifierVictoire();
 }
 
 function checkForMatch() {
@@ -61,3 +64,48 @@ function resetBoard() {
 })();
 
 cards.forEach(card => card.addEventListener('click', flipCard));
+
+//ce que je vais ajouter
+
+function fermerDialogue()
+{
+  document.getElementById("boiteDialogue").close();
+}
+
+function fermerPourDeVrai()
+{
+  localStorage.setItem("nePlusAfficher", "true");
+  document.getElementById("boiteDialogue").close();
+}
+
+if(localStorage.getItem("nePlusAfficher") !== "true")
+{
+  document.getElementById("boiteDialogue").showModal();
+}
+
+function verifierVictoire() 
+{
+  //Vérifie si toutes les cartes sont retournées (ont la classe 'flip')
+  const flippedCards = document.querySelectorAll('.memory-card.flip');
+
+  //affiche la video si toutes les cartes sont retournées
+  if (flippedCards.length === cards.length)
+  {
+    const video = document.getElementById("videoVictoire");
+
+    //fait en sorte que ma video de victoire recommence tout le temps au début
+    video.currentTime = 0;
+    video.play();
+
+    //Affiche la vidéo de victoire
+    document.getElementById("divVideoVictoire").style.display = "block"; 
+    //affiche le bouton recommencer
+    document.getElementById("recommencer").style.display = "block";
+  }
+}
+
+function apparaitreBouton()
+{
+  document.getElementById("recommencer");
+  window.location.reload();
+}

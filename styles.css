@@ -1,55 +1,191 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+  body, html, div, section, img, h3, h4{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-body {
-  height: 100vh;
-  display: flex;
-  background: #060AB2;
-}
+  body {
+    height: 100vh;
+  }
 
-.memory-game {
-  width: 640px;
-  height: 640px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  perspective: 1000px;
-}
+  .memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
 
-.memory-card {
-  width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
-  margin: 5px;
-  position: relative;
-  transform: scale(1);
-  transform-style: preserve-3d;
-  transition: transform .5s;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
-}
+  .memory-card {  
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  }
 
-.memory-card:active {
-  transform: scale(0.97);
-  transition: transform .2s;
-}
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .1s;
+  }
 
-.memory-card.flip {
-  transform: rotateY(180deg);
-}
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+/*mes ajouts*/
 
-.front-face,
-.back-face {
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #0e1821;
+    backface-visibility: hidden;
+  }
+
+  .front-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background: #0e1821;
+    backface-visibility: hidden;
+  }
+
+
+  .front-face {
+    transform: rotateY(180deg);
+  }
+
+  #boiteDialogue
+  {
+    border-radius: 15px;
+  }
+  
+  dialog::backdrop {
+    background-color: rgba(93, 188, 251, 0.5); 
+    backdrop-filter: blur(5px);
+  }
+
+  #conteneur
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    margin: 30px;
+  }
+
+  #contenue
+  {
+    margin: 10px;
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  #bouton1
+  {
+    background-color:#1C7CCC;
+    color: white;
+    border-radius: 13px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  #bouton2
+  {
+    background: none;
+    border: none; 
+    color: #000; 
+    font-size: 16px; 
+    cursor: pointer;
+  }
+
+  #image
+  {
+    width: 100px;
+  }
+
+  #hr
+  {
+    color: blue;
+  }
+
+  #myVideo 
+  {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+
+/*#divVideoVictoire {
+  position: fixed;
   width: 100%;
   height: 100%;
-  padding: 20px;
-  position: absolute;
-  border-radius: 5px;
-  background: #1C7CCC;
-  backface-visibility: hidden;
+  overflow: hidden;
+  display: none; 
+  z-index: 1000; 
 }
 
-.front-face {
-  transform: rotateY(180deg);
+#videoVictoire {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}*/
+
+#divVideoVictoire {
+  position: fixed;
+  top: 0;       
+  left: 0;    
+  width: 100%;  
+  height: 100%; 
+  overflow: hidden;
+  display: none;
+  /*fait que la video est au dessu de tout*/
+  z-index: 2;
 }
+
+#videoVictoire {
+  position: absolute;
+  /*fait que la video prenne obligatoirement le coins en haut à gauche*/
+  top: 0;
+  left: 0;       
+  width: 100%;
+  height: 100%; 
+  /*fait que la video prenne toute l'écran*/
+  object-fit: cover; 
+}
+
+#recommencer{
+  position: absolute;
+  z-index: 3; 
+  background-color: red; 
+  color: white;
+  border: none;
+  border-radius: 8px; 
+  font-size: 14px; 
+  /*fait que le curseur change de forme quand on passe surle bouton*/
+  cursor: pointer;
+  padding: 5px;
+  /*place le bouton au centre de la page en bas*/
+  left: 50%; 
+  bottom: 20px;
+  left: 50%; 
+  transform: translateX(-50%)
+}
+

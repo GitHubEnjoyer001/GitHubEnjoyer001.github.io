@@ -1,68 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
   <meta charset="UTF-8">
 
-  <title>Memory Game</title>
+  <title>Jeu de mémoire</title>
 
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <dialog id="boiteDialogue">
+    <form method="dialog">
+      <div id="conteneur">
+        <div>
+          <h1>
+            Projet personnel
+          </h1>
+          <hr size="1" id="hr">
+              <!---met la ligne qui séppare-->
+        </div>
+        Design web gr.1 - Automne 2024
+        <div id="contenue">
+          <div>
+            <h3>
+              Réalisé par
+            </h3>
+            <p>
+              <cite>
+                Laurent Côté
+              </cite> 
+            </p>
+          <h3>
+            Inspiration
+          </h3>
+          <p>
+            <a href="https://github.com/code-sketch/memory-game">https://github.com/code-sketch/memory-game</a>
+          </p>
+          </div>
+          <img src="https://design-web-victo.github.io/assets/images/megaman.png" alt="megaman pixelisé" id="image">
+        </div>       
+        <button id="bouton1" onclick="fermerDialogue()">Fermer</button>
+        <button id="bouton2" onclick="fermerPourDeVrai()">Ne plus afficher cette fenêtre</button>
+      </div>    
+    </form>
+  </dialog>
+
   <section class="memory-game">
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="../img/aurelia.svg" alt="Aurelia" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="Yone">
+      <img class="front-face" src="/img/Yone card.jpg" alt="Yone" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
     </div>
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="../img/aurelia.svg" alt="Aurelia" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="../img/vue.svg" alt="Vue" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="../img/vue.svg" alt="Vue" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="Yone">
+      <img class="front-face" src="/img/Yone card.jpg" alt="Yone" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
     </div>
 
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="../img/angular.svg" alt="Angular" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="Mordekaiser">
+      <img class="front-face" src="/img/Mordekaiser card.webp" alt="Mordekaiser" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
     </div>
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="../img/angular.svg" alt="Angular" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="../img/ember.svg" alt="Ember" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="../img/ember.svg" alt="Ember" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="Mordekaiser">
+      <img class="front-face" src="/img/Mordekaiser card.webp" alt="Mordekaiser" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
     </div>
 
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="../img/backbone.svg" alt="Backbone" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="Sett">
+      <img class="front-face" src="/img/Sett card.webp" alt="Sett" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
     </div>
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="../img/backbone.svg" alt="Backbone" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="Sett">
+      <img class="front-face" src="/img/Sett card.webp" alt="Sett" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
     </div>
 
-    <div class="memory-card" data-framework="react">
-      <img class="front-face" src="../img/react.svg" alt="React" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="Jhin">
+      <img class="front-face" src="/img/jhin card.jpg" alt="Jhin" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
     </div>
-    <div class="memory-card" data-framework="react">
-      <img class="front-face" src="../img/react.svg" alt="React" />
-      <img class="back-face" src="../img/js-badge.svg" alt="JS Badge" />
+    <div class="memory-card" data-framework="Jhin">
+      <img class="front-face" src="/img/jhin card.jpg" alt="Jhin" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="Kayn">
+      <img class="front-face" src="/img/Kayn card.jpg" alt="Kayn" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="Kayn">
+      <img class="front-face" src="/img/Kayn card.jpg" alt="Kayn" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
+    </div>
+
+    <div class="memory-card" data-framework="Silco">
+      <img class="front-face" src="/img/Silco card.jpg" alt="Cilco" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
+    </div>
+    <div class="memory-card" data-framework="Silco">
+      <img class="front-face" src="/img/Silco card.jpg" alt="Silco" />
+      <img class="back-face" src="/img/OJOUKdS-removebg-preview.png" alt="JS Badge" />
     </div>
   </section>
+
+    <div class="fond">
+      <video autoplay muted loop id="myVideo">
+        <source src="/video/brume-foncé.mp4" type="video/mp4">
+      </video>  
+    </div>
+
+    <button id="recommencer" onclick="apparaitreBouton()">Recommencer</button>
+
+    <div id="divVideoVictoire">
+      <video autoplay muted loop id="videoVictoire">
+        <source src="/video/league_of_legends__in_game_-_victory (1080p).mp4" type="video/mp4">
+      </video>
+    </div>
 
   <script src="scripts.js"></script>
 </body>
